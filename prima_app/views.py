@@ -1,3 +1,4 @@
+from typing import ContextManager
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,3 +13,11 @@ def lista(request):
 
 def chi_siamo(request):
     return render(request, "chi_siamo.html")
+
+def variabili(request):
+    context= {
+        'var1': 'Prima Variabile',
+        'var2': 'seconda Variabile',
+        'var3': 'terza Variabile'
+    }
+    return render(request, "variabili.html",context)
